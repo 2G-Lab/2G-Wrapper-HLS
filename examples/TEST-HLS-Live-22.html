@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test HLS Live</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.14/dist/hls.js"></script>
+    <script src="../src/wrapper-hls.js"></script>
+    <script>
+      const playlistURLs_1 = [
+        'https://specialized.cdn.edge.name/NickName-of-EntryPoint-1/streamName/playlist.m3u8',
+        'https://specialized.cdn.edge.name/NickName-of-EntryPoint-2/streamName/playlist.m3u8'
+      ];
+      const playlistURLs_2 = [
+        'https://regular.cdn.edge.name/streamName/playlist.m3u8',
+        'https://regular.cdn.edge.name/streamName/playlist.m3u8'
+      ];
+      let player_1, player_2;
+      window.onload = (event) => {
+        player_1 = new x2G_Player_HLS('video-1', playlistURLs_1);
+        player_2 = new x2G_Player_HLS('video-2', playlistURLs_2);
+      //setTimeout(() => {player_1 = new x2G_Player_HLS('video-1', playlistURLs_1)},2000);
+      //setTimeout(() => {player_2 = new x2G_Player_HLS('video-2', playlistURLs_2)},5000);
+      }
+    </script>
+  </head>
+  <body>
+    <video id="video-1" width="640" height="360" autoplay muted></video>
+    <video id="video-2" width="640" height="360" autoplay muted></video>
+  </body>
+</html>
